@@ -1,0 +1,141 @@
+\documentclass{beamer}
+
+% Theme
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tabularx}
+%\usepackage{titling}
+\definecolor{blue}{RGB}{0, 102, 204}
+\setbeamercolor{structure}{fg=blue}
+
+% Title page
+\title{Statistics on further studies of students in IIT H}
+\subtitle{MA4240  Applied Statistics}
+\author{Shreyas Wankhede, Pradeep Mundlik, Akshitha Kola, Dhatri Reddy, Mouktika Cherukupalli, Avinash Malothu, Sumeeth Kumar, Saathvika Marri}
+\institute{IIT Hyderabad}
+\date{\today}
+
+% Begin document
+\begin{document}
+
+% Title slide
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Outline slide
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+% Content slides
+\section{Introduction}
+\begin{frame}
+  \frametitle{Introduction}
+  This is the introduction slide.
+\end{frame}
+
+\section{Data Visualization}
+\begin{frame}
+  \frametitle{Data visualization}
+  
+\end{frame}
+
+\section{Hypothesis Testing}
+\begin{frame}
+  \frametitle{hypothesis Testing}
+  \begin{block}{\textbf{case 1:}{comparing CGPA of students who are willing to pursue higher studies with students who dont want to pursue  }}
+     We assume our null hypothesis to be that average CGPA of students willing to go for higher studies is  greater than those who dont want to. Let $\alpha = 0.05$.
+     \begin{enumerate*}
+         \item  $\bar{x_1}$=sample mean of CGPA of people willing to go for higher studies\\
+         \item  $\bar{x_2}$=sample mean of CGPA of people who  dont want higher studies\\
+         \item  $s^2_1$=sample standard deviation of CGPA of people willing for higher studies\\
+         \item  $s^2_2$=sample standard deviation of CGPA of people who  dont want \\
+     \end{enumerate*}
+   For Hypothesis Testing we make the following statements- 
+      \begin{align*}
+          H_0=\mu_1-\mu_2\geq0\\
+          H_a=\mu1-\mu2<0
+      \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}{hypothesis testing}
+        \begin{block}{\textbf{case 1:}{ case 1 continued}}
+            information:
+             \begin{align}
+                 &\bar{x_1}=8.4447\\
+                 &\bar{x_2}=8.3919\\
+                 &s^2_1=0.7694\\
+                 &s^2_2=0.5672\\
+                 &n_1=88\\
+                 &n_2=26
+             \end{align}
+       since $\dfrac{s^2_1}{s^2_2}<4$ ,we can assume the population variances would be equal. \\
+       the degrees of freedom, $$dof=n_1+n_2-2=112$$
+        \end{block}
+    \end{frame}
+    \begin{frame}{hypothesis testing}
+    \begin{block}{case 1 continued}
+        the pooled varience will be:
+           \begin{align}
+               s^2_p=\dfrac{(n_1-1)s^2_1+(n_2-1)s^2_2}{n_1+n_2-2}=0.5317
+           \end{align}
+           the test statistic is given by:
+           \begin{align}
+               t=\dfrac{\bar{x_1}-\bar{x_2}-0}{s_p\sqrt{\dfrac{n_2+n_1}{n_1n_2}}}=0.3244
+           \end{align}
+           Using the rejection region approach, we reject $H_0$ if $t_{0.05,112}\geq -t$ where $t_{0.05,112}=-1.6586$. we have enough statistical evidence to reject null hypothesis since observer t is lesser than 1.6586
+           
+    \end{block}
+        
+    \end{frame}
+    \begin{frame}{hypothesis testing}
+    
+  \begin{block}{\textbf{Case 4:} Hypothesized proportion testing if there is enough evidence that the proportions of people opting for masters,MBA,Phd are not all equal}
+    Sample data :
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Masters & MBA & PhD & Total\\
+        \hline
+        50 & 24 & 13 & 87 \\
+        \hline
+    \end{tabular}\\
+
+    Let $P_{Ms}$, $P_{MBA}$, $P_{PhD}$ denote proportions of students willing to pursue Masters, MBA, PhD for higher studies \\
+
+    $H_{0}$ :  $P_{Ms} = P_{MBA} = P_{PhD} = \dfrac{1}{3}$ \space \space \space \space $H_{a}$ : atleast one $P \neq \dfrac{1}{3}$\space \space \space \space $\alpha =0.05$\\
+
+    Also,
+    \begin{equation}
+        E = \dfrac{1}{3} x 87 = 29
+    \end{equation}
+    and,
+    \begin{equation}
+        \chi^{2} = \sum\dfrac{(O - E)^{2}}{E}
+    \end{equation}  
+    \end{block}
+\end{frame}
+
+%\section{Hypothesis Testing}
+\begin{frame}
+  \frametitle{Hypothesis Testing}
+  \begin{block}{\textbf{Case 4:} Case 4 continued}
+   
+    \begin{equation}
+        \begin{aligned}
+            \chi^{2} &= \dfrac{(50 - 29)^{2}}{29} + \dfrac{(24 -29)^{2}}{29} + \dfrac{(13 -29)^{2}}{29}\\
+            &= 15.2 + 0.862 + 8.827\\
+            &= 24.889 
+        \end{aligned}
+    \end{equation}
+    At $df = 3 - 1 = 2 $ , p value $= 0.0001  $\\
+    p value $< \alpha = 0.05$\\
+    Hence there is enough evidence that population proportions are not all equal.
+
+
+    \end{block}
+\end{frame}
+
+% End document
+\end{document}
